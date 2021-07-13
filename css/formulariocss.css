@@ -1,0 +1,108 @@
+#fr1
+{
+	height: 550px;
+}
+#fr2
+{
+	height: 550px;
+}
+
+#btnCancelar{
+  bottom: 10px;
+  position: absolute;
+  right: 10px;
+} 
+#btnGuardar{
+  bottom: 10px;
+  position: absolute;
+  right: 110px;
+}
+#lblNombre{
+	top: 10px;
+  	position: absolute;
+  	left: 30px;
+  	font-size: 18px;
+}
+#txtNombre{
+	top: 10px;
+  	position: absolute;
+  	right: 70px;
+  	font-size: 18px;
+}
+#lblLugares{
+	top: 70px;
+  	position: absolute;
+  	left: 30px;
+  	font-size: 18px;
+}
+
+#txtLugares{
+	top: 70px;
+  	position: absolute;
+  	right: 70px;
+  	font-size: 18px;
+}
+
+#lblRegla{
+	top: 130px;
+  	position: absolute;
+  	left: 30px;
+  	font-size: 18px;
+}
+
+#txtRegla{
+	top: 130px;
+  	position: absolute;
+  	right: 70px;
+  	font-size: 18px;
+}
+
+#lblRequisitos{
+	top: 230px;
+  	position: absolute;
+  	left: 30px;
+  	font-size: 18px;
+}
+
+#txtRequisitos{
+	top: 230px;
+  	position: absolute;
+  	right: 70px;
+  	font-size: 18px;
+}
+
+#dtFecha{
+	top: 10px;
+  	position: absolute;
+  	left: 110px;
+  	font-size: 18px;
+}
+
+#txtLgr{
+	top: 70px;
+  	position: absolute;
+  	left: 110px;
+  	font-size: 18px;
+}
+
+#txtcosto{
+	top: 130px;
+  	position: absolute;
+  	left: 110px;
+  	font-size: 18px;
+}
+
+#encabezado{
+  height:50px; 
+}
+#navencabezado{
+  height: 50px;
+}
+#idpie{
+padding-top: 90px;
+  bottom: 0px;
+}
+#logo{
+
+}
+

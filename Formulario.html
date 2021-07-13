@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>	</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/estilos.css" rel="stylesheet">
+    <link href="css/formulariocss.css" rel="stylesheet">
+    <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
+</head>
+
+<body>
+
+<header id="encabezado">
+	<nav id="navencabezado" class="navbar navbar-default">
+      	<div  class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Actividades de temporada</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Panel de Control</a></li>
+            <li class="active"><a href="paginas.html">Paginas</a></li>
+            <li><a href="entradas.html">Entradas</a></li>
+            <li><a href="usuarios.html">Usuarios</a></li>
+            <li><a href="../index.html">Ir a sitio</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"></a></li>
+            <li><a href="login.html">Salir</a></li>
+          </ul>
+        </div>
+     </div>
+    </nav>	
+</header>
+
+		
+	
+	<section  class="col-md-12 container-fluid" style="background-color:#E9967A;">
+		<div id="fr1"  class="col-md-6" >	
+			<p id="lblNombre">Nombre:</p>
+			<input id="txtNombre" type="text" name="nombre" size="40">
+			<p id="lblLugares">Lugares disponibles:</p>	
+			<input id="txtLugares" type="text" name="LDisponible" size="40">
+			<p id="lblRegla">Reglamento:</p>
+			<textarea id="txtRegla" name="texto"  rows="2" cols="38"></textarea>
+			<p id="lblRequisitos" >Requisitos:</p>
+			<textarea id="txtRequisitos" name="texto" rows="2" cols="38"></textarea>
+		</div>
+
+		<div id="fr2"  class="col-md-6">
+			<p id="dtFecha">Fecha: <input type="date" name="fecha"></p>
+			<p id="txtLgr">Lugar: <input type="text" name="nombre" size="40"></p>
+			<p id="txtcosto">Costo: <input type="text" name="nombre" size="40"></p>
+			<div id="logo" style="padding-top: 175px; padding-left: 180px;">
+				<img src="img\latoure.png" width="300" height="250" >
+			</div> 
+			<a id="btnCancelar" class="btn btn-default" href="www.google.com">Cancelar</a> 
+			<a id="btnGuardar" style="background-color: lightgreen;" class="btn btn-default" href="www.google.com">Guardar</a>
+
+		</div>
+
+
+
+	</section>
+
+    <div id="idpie" class="footer-dark" style="background-color: #EB6F31;">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">© 2021</p>
+            </div>
+        </footer>
+    </div>	
+
+  <script>
+     CKEDITOR.replace( 'editor1' );
+ </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
