@@ -1,6 +1,6 @@
 </section>
 
-    <div id="idpie" class="footer-dark" style="background-color: #EB6F31;">
+    <div id="idpie"  style="background-color: #EB6F31;">
         <footer>
             <div class="container">
                 <div class="row">

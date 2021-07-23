@@ -20,7 +20,7 @@
 				<img src="<?php echo base_url ();?>/assets/img/latoure.png" width="300" height="250" >
 				
 			</div> 
-			<a id="btnCancelar" class="btn btn-default" href="www.google.com">Cancelar</a> 
+			<a id="btnCancelar" class="btn btn-default" href="<?php echo base_url('/public/Home/index')?>">Cancelar</a> 
 			<a id="btnGuardar" style="background-color: lightgreen;" class="btn btn-default" href="www.google.com">Guardar</a>
 
 		</div>
