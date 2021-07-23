@@ -24,7 +24,7 @@
                 <br>
                 
                 <table class="table table-striped table-hover">
-                      <tr>
+                      <tr >
                           <th>ID</th>
                         <th>Nombre</th>
                         <th>Fecha</th>
@@ -34,22 +34,36 @@
                         <th></th>
                         <th></th>
                       </tr>
-                                           
-                      <?php foreach ($datos as $x): ?>
+
+                      <form method="POST" action="<?php echo base_url('/public/Home/EliminarAE')?>">
+                        <?php foreach ($datos as $x): ?>
                       <tr>
-                        <td><?php echo $x->idAespecial ?></td>
+                        <td ><?php echo $x->idAespecial ?></td>
                         <td><?php echo $x->Nombre ?></td>
                         <td><?php echo $x->fecha ?></td>
                         <td><?php echo $x->lugar ?></td>
                         <td><?php echo $x->costo ?></td>
                         <td><?php echo $x->maxA ?></td>
-                        <td></td>
+                        <td><button class="btn btn-danger" tabindex="4" type="submit" name="id" value="<?php echo $x->idAespecial ?>" >Eleminar</td>
+                     
+                       
+                     
 
-                        <td><a class="btn btn-default" href="editar.html">Consultar</a> 
-                          <a class="btn btn-danger" href="<?php echo base_url().'/EliminarAE/' .$x->idAespecial?>">Eliminar</a></td></td>
+                        <td><a class="btn btn-default" href="editar.html">Consultar</a>
+
+                          
                         
                       </tr>
-                      <?php endforeach ?>
+                    <?php endforeach ?>
+
+                      </form>
+                        
+
+
+                 
+                        
+
+                      
                       
                      </table>
               </div>

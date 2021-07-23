@@ -33,8 +33,8 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/ElimiarAE/(:any)','Home::EliminarAE/$1');
-
+$routes->post('/ElimiarAE/(:any)','Home::EliminarAE/$1');
+$routes->post('/crearE','Home::crearE');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

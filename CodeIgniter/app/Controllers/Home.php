@@ -30,6 +30,7 @@ class Home extends BaseController
 	{
 		
 		$controlador = $_POST["controlador"];
+		print_r($_POST);
 
 		if($controlador == 1){
 		echo view('Header2');
@@ -45,16 +46,43 @@ class Home extends BaseController
 				
 	}
 
-	public function EliminarAE($idAespecial){
+	public function EliminarAE(){
+		
+		
+		$id = $_POST['id'];
+		//print_r($id);
 		$ModeloPrincipal = new ModeloPrincipal();
-		$data = ["id_AE" => $idAespecial];
-		$respuesta = $ModeloPrincipal->EliminarAE($data);
-		//$ModeloPrincipal->EliminarAE($idAespecial);
-
-		redirect('Home/index');
+		
+		$ModeloPrincipal->EliminarAE($id);
+		return redirect()->to(base_url().'/public/Home/index');
+		//redirect('Home/index');
 
 	}
 
+	public function crearE(){
+		
+	
+			$nombre = $_POST['nombre'];
+			$fecha = $_POST['fecha'];
+			$minA = "0";
+			$maxA = $_POST['maxA'];
+			$requ = $_POST['requi'];
+			$regl = $_POST['regla'];
+			$costo = $_POST['costo'];
+			$lugar = $_POST['lugar'];
+
+			
+			//print_r($nombre);
+
+		$ModeloPrincipal = new ModeloPrincipal();
+
+		$ModeloPrincipal->CrearAE($nombre,$fecha,$minA,$maxA,$requ,$regl,$costo,$lugar);
+
+		return redirect()->to(base_url().'/public/Home/index');
+
+		
+
+	}
 	
 
 	
