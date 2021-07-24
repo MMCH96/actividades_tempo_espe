@@ -34,9 +34,9 @@
                         <th></th>
                         <th></th>
                       </tr>
-
-                      <form method="POST" action="<?php echo base_url('/public/Home/EliminarAE')?>">
-                        <?php foreach ($datos as $x): ?>
+                    <?php foreach ($datos as $x): ?>
+                      
+                        
                       <tr>
                         <td ><?php echo $x->idAespecial ?></td>
                         <td><?php echo $x->Nombre ?></td>
@@ -44,21 +44,23 @@
                         <td><?php echo $x->lugar ?></td>
                         <td><?php echo $x->costo ?></td>
                         <td><?php echo $x->maxA ?></td>
-                        <td><button class="btn btn-danger" tabindex="4" type="submit" name="id" value="<?php echo $x->idAespecial ?>" >Eleminar</td>
-                     
-                       
-                     
 
-                        <td><a class="btn btn-default" href="editar.html">Consultar</a>
+                        <form method="POST" action="<?php echo base_url('/public/Home/EliminarAE')?>">
+                        <td><button class="btn btn-danger" tabindex="4" type="submit" name="id" value="<?php echo $x->idAespecial ?>" >Eliminar</td>  
+                        </form>
 
-                          
-                        
+                        <form method="POST" action="<?php echo base_url('/public/Home/editar')?>">
+                            
+                              <td><button class="btn btn-default"  type="submit" name="id2" value="<?php echo $x->idAespecial ?>" >Consultar</td>
+                                
+                          </form>                                            
                       </tr>
-                    <?php endforeach ?>
-
-                      </form>
+                      
+                      
+                    
+                      
                         
-
+                      <?php endforeach ?>
 
                  
                         

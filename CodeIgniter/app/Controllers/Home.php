@@ -30,7 +30,7 @@ class Home extends BaseController
 	{
 		
 		$controlador = $_POST["controlador"];
-		print_r($_POST);
+		//print_r($_POST);
 
 		if($controlador == 1){
 		echo view('Header2');
@@ -81,6 +81,49 @@ class Home extends BaseController
 		return redirect()->to(base_url().'/public/Home/index');
 
 		
+	}
+
+	public function editar(){
+		$id = $_POST['id2'];
+		//print_r($id);
+
+		$ModeloPrincipal = new ModeloPrincipal();
+
+		$datos3 = $ModeloPrincipal->editar($id);
+
+		//print_r($datos3);
+
+		$data = [
+			"datos" => $datos3
+			];
+
+		echo view('Header2');
+		echo view('EditAE',$data);
+		echo view('Footer');
+
+
+	}
+
+	public function actualizarAE(){
+
+
+			$id = $_POST['idAE'];
+			$nombre = $_POST['nombre'];
+			$fecha = $_POST['fecha'];
+			$minA = '0';
+			$maxA = $_POST['maxA'];
+			$requ = $_POST['requi'];
+			$regl = $_POST['regla'];
+			$costo = $_POST['costo'];
+			$lugar = $_POST['lugar'];
+
+		
+		$ModeloPrincipal = new ModeloPrincipal();
+
+		$ModeloPrincipal->actualziarAE($id,$nombre,$fecha,$minA,$maxA,$requ,$regl,$costo,$lugar);
+
+		return redirect()->to(base_url().'/public/Home/index');
+
 
 	}
 	
