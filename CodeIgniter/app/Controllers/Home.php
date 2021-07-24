@@ -120,7 +120,7 @@ class Home extends BaseController
 		
 		$ModeloPrincipal = new ModeloPrincipal();
 
-		$ModeloPrincipal->actualziarAE($id,$nombre,$fecha,$minA,$maxA,$requ,$regl,$costo,$lugar);
+		$ModeloPrincipal->actualizarAE($id,$nombre,$fecha,$minA,$maxA,$requ,$regl,$costo,$lugar);
 
 		return redirect()->to(base_url().'/public/Home/index');
 

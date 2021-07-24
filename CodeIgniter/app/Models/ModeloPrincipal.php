@@ -33,11 +33,10 @@ class ModeloPrincipal extends Model
 
 	public function actualizarAE($id,$nombre,$fecha,$minA,$maxA,$requi,$regla,$costo,$lugar)
 	{
-		$this->table='aespeciales';
-		$this->db->query("UPDATE aespeciales SET Nombre ='$nombre',fecha='2019-02-02',minA='$minA',maxA='$maxA',Requisitos='$requi',reglamento='$regla',costo='$costo',lugar='$lugar' WHERE idAespecial = '$id'");
-		
 
-
+		$this->db->query("UPDATE aespeciales SET Nombre ='$nombre',fecha='$fecha',minA='$minA',maxA='$maxA',Requisitos='$requi',reglamento='$regla',costo='$costo',lugar='$lugar' WHERE idAespecial = '$id'");
+		$this->db->table('aespeciales');
+	
 		
 	}
 
