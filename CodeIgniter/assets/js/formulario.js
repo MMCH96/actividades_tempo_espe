@@ -35,6 +35,7 @@ function validar(){
     }
 }
 
+
 /*
 function validar(){
     var nombre, apellido, correo, usuario, contrasena, telefono;

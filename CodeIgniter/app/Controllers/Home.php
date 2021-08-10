@@ -10,6 +10,7 @@ class Home extends BaseController
 
 	public function index()
 	{
+
 		$ModeloPrincipal = new ModeloPrincipal();
 
 		$datos3 = $ModeloPrincipal->Mostrar();
@@ -26,24 +27,51 @@ class Home extends BaseController
 				
 	}
 
+	public function index2()
+	{
+
+		$ModeloPrincipal = new ModeloPrincipal();
+
+		$datos3 = $ModeloPrincipal->Mostrar2();
+
+		//print_r($datos3);
+
+		$data = [
+			"datos" => $datos3
+			];
+		
+		echo view('Header3');
+		echo view('Estatus2',$data);
+		echo view('Footer');
+				
+	}
+
+	public function inicio()
+	{
+			
+				echo view('Header3');
+				echo view('inicio');
+				echo view('Footer');
+				
+	}
+
+
 	public function form()
 	{
+	
 		
-		$controlador = $_POST["controlador"];
-		//print_r($_POST);
-
-		if($controlador == 1){
 		echo view('Header2');
 		echo view('FormEspeciales');
 		echo view('Footer');
-		}
-		elseif($controlador == 0)
-		{
+		
+				
+	}
+
+	public function form2()
+	{
 		echo view('Header');
 		echo view('FormTemporada');
 		echo view('Footer');
-		}
-				
 	}
 
 	public function EliminarAE(){
@@ -64,7 +92,7 @@ class Home extends BaseController
 	
 			$nombre = $_POST['nombre'];
 			$fecha = $_POST['fecha'];
-			$minA = "0";
+			$minA = $_POST['minA'];
 			$maxA = $_POST['maxA'];
 			$requ = $_POST['requi'];
 			$regl = $_POST['regla'];
@@ -110,7 +138,7 @@ class Home extends BaseController
 			$id = $_POST['idAE'];
 			$nombre = $_POST['nombre'];
 			$fecha = $_POST['fecha'];
-			$minA = '0';
+			$minA = $_POST['minA'];
 			$maxA = $_POST['maxA'];
 			$requ = $_POST['requi'];
 			$regl = $_POST['regla'];
@@ -123,6 +151,89 @@ class Home extends BaseController
 		$ModeloPrincipal->actualizarAE($id,$nombre,$fecha,$minA,$maxA,$requ,$regl,$costo,$lugar);
 
 		return redirect()->to(base_url().'/public/Home/index');
+
+
+	}
+
+	// TEMPORADA
+
+	public function crearT(){
+		
+	
+			$nombre = $_POST['nombre'];
+			$fecha = $_POST['fecha'];
+			$minA = $_POST['minA'];
+			$maxA = $_POST['maxA'];
+			$requ = $_POST['requi'];
+			$regl = $_POST['regla'];
+			$costo = $_POST['costo'];
+			$lugar = $_POST['lugar'];
+
+			
+			//print_r($nombre);
+
+		$ModeloPrincipal = new ModeloPrincipal();
+
+		$ModeloPrincipal->CrearAT($nombre,$fecha,$minA,$maxA,$requ,$regl,$costo,$lugar);
+
+		return redirect()->to(base_url().'/public/Home/index2');
+
+		
+	}
+
+	public function EliminarAT(){
+		
+		
+		$id = $_POST['id'];
+		//print_r($id);
+		$ModeloPrincipal = new ModeloPrincipal();
+		
+		$ModeloPrincipal->EliminarAT($id);
+		return redirect()->to(base_url().'/public/Home/index2');
+		//redirect('Home/index');
+
+	}
+
+	public function editarT(){
+		$id = $_POST['id2'];
+		//print_r($id);
+
+		$ModeloPrincipal = new ModeloPrincipal();
+
+		$datos3 = $ModeloPrincipal->editarT($id);
+
+		//print_r($datos3);
+
+		$data = [
+			"datos" => $datos3
+			];
+
+		echo view('Header2');
+		echo view('EditAT',$data);
+		echo view('Footer');
+
+
+	}
+
+	public function actualizarAT(){
+
+
+			$id = $_POST['idAT'];
+			$nombre = $_POST['nombre'];
+			$fecha = $_POST['fecha'];
+			$minA = $_POST['minA'];
+			$maxA = $_POST['maxA'];
+			$requ = $_POST['requi'];
+			$regl = $_POST['regla'];
+			$costo = $_POST['costo'];
+			$lugar = $_POST['lugar'];
+
+		
+		$ModeloPrincipal = new ModeloPrincipal();
+
+		$ModeloPrincipal->actualizarAT($id,$nombre,$fecha,$minA,$maxA,$requ,$regl,$costo,$lugar);
+
+		return redirect()->to(base_url().'/public/Home/index2');
 
 
 	}

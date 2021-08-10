@@ -12,17 +12,16 @@ class ModeloPrincipal extends Model
 	return $consulta3->getResult();	
 	}
 
+	public function Mostrar2()
+	{
+	$consulta3 = $this->db->query("SELECT idAtemp,nombre,fecha,Lugar,costo,maxA FROM atemporada ");
+	return $consulta3->getResult();	
+	}
+
 	public function EliminarAE($idAespecial)
 	{
 		$this->db->query("DELETE FROM aespeciales WHERE idAespecial = '$idAespecial' ");
-		
-
-		//$AE = $this->db->table('aespeciales');
-		//$AE->where($idAespecial);
-		//return $AE->delete();
-		//$this->db->where('idAespecial',$idAespecial);
-		//$resp = $this->db->delete('aespeciales');
-		//return $resp;
+	
 	}
 
 	public function CrearAE($nombre,$fecha,$minA,$maxA,$requi,$regla,$costo,$lugar){
@@ -46,10 +45,40 @@ class ModeloPrincipal extends Model
 	}
 
 
+// TEMPORADA
+
+	public function CrearAT($nombre,$fecha,$minA,$maxA,$requi,$regla,$costo,$lugar){
+
+		$this->db->query("INSERT INTO atemporada(idAtemp, nombre, fecha, minA, maxA, Requisitos, Reglamento, Lugar, costo) VALUES (NULL,'$nombre','$fecha','$minA','$maxA','$requi','$regla','$lugar','$costo')");
+	
+	}
+
+
+
+
+public function EliminarAT($idAtemp)
+	{
+		
+		$this->db->query("DELETE FROM atemporada WHERE idAtemp = '$idAtemp' ");
+	
+	}
+
+public function editarT($id){
+		$consulta3 = $this->db->query("SELECT * FROM atemporada WHERE idAtemp = '$id'");
+	return $consulta3->getResult();	
+	}
+
+
+public function actualizarAT($id,$nombre,$fecha,$minA,$maxA,$requi,$regla,$costo,$lugar)
+	{
+
+		$this->db->query("UPDATE atemporada SET nombre ='$nombre',fecha='$fecha',minA='$minA',maxA='$maxA',Requisitos='$requi',Reglamento='$regla',costo='$costo',Lugar='$lugar' WHERE idAtemp = '$id'");
+		$this->db->table('aespeciales');
+	
+		
+	}
+
 }
-
-
-
 
 
  ?>

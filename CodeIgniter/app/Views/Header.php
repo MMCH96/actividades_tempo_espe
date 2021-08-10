@@ -29,7 +29,7 @@
 <body>
 
 <header id="encabezado">
-	<nav id="navencabezado" class="navbar navbar-default">
+	<nav style="height: 50px;" class="navbar navbar-default">
       	<div  class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -48,10 +48,7 @@
             <li><a href="usuarios.html">Registrate</a></li>
             <li><a href="../index.html">Actividades culturales y deportivas</a></li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"></a></li>
-            <li><a href="login.html">Salir</a></li>
-          </ul>
+         
         </div>
      </div>
     </nav>	
